@@ -4,7 +4,7 @@ const product = [
             description:'description_1', 
             price: '$price_1', 
             availability: true, 
-            stock:1, 
+            stock:1,  
             image: 'image_1', 
             category:['electrico']},
         {id:2, 

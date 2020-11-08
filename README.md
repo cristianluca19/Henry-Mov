@@ -218,3 +218,7 @@ Este proyecto tiene muchas tareas para realizar, asi que es fácil sentirse abru
 - npm install passport-github2
 - npm install mailgun-js
 - npm install crypto-random-string
+
+git remote add origin https://github.com/cristianluca19/Henry-Mov.git
+git branch -M main
+git push -u origin main
