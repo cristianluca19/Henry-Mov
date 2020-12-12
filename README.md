@@ -1,59 +1,28 @@
-<p align='left'>
-    <img src='https://static.wixstatic.com/media/85087f_0d84cbeaeb824fca8f7ff18d7c9eaafd~mv2.png/v1/fill/w_160,h_30,al_c,q_85,usm_0.66_1.00_0.01/Logo_completo_Color_1PNG.webp' </img>
-</p>
 
-# Henry
+# E-Commerce
+<img src="./img/Landing.PNG">
+<img src="./img/Profile.PNG">
+<img src="./img/Catalogue.PNG">
+<img src="./img/product1.PNG">
+<img src="./img/product2.PNG">
+<img src="./img/Cart.PNG">
+<img src="./img/payment1.PNG">
+<img src="./img/payment2.PNG">
 
 ## Objetivos del Proyecto
-
 - Construir una App JavaScript desde cero.
 - Afirmar y conectar los conceptos aprendidos en la carrera.
 - Aprender mejores prácticas.
 - Aprender y practicar el workflow de GIT.
 - Utilizar Metodologías Ágiles.
 - Trabajar en equipo.
-- Usar y practicar testing.
 
-## Trabajo en Equipo
 
-En este proyecto, van a trabajar en equipo de 4 a 6 personas. Van a trabajar siempre en pares, al terminar una tarea, van a cambiar de pareja para llegar a trabajar con todos los compañeros.
-Ninguna tarea debería llevar más de dos días en terminar, si esto sucede contactar con tu PM.
+### Requerimientos
 
-Vamos a usar **GIT** para gestionar el código y **Trello** para gestionar el proyecto y facilitar la colaboración. Recomendamos el siguiente *workflow* para una tarea dada:
-
-- Crear una Card de Trello para una tarea.
-- Asignar un equipo de dos para trabajar en la tarea.
-- Hacer un `branch` por cada card de trello (incluir el nombre o ID de la card en el nombre de la branch).
-- Codear en equipo hasta completar la tarea (con tests).
-- Pullear de master a nuestra branch (para mergear código nuevo de master).
-- Pushear nuestra Branch a git y hacer un `PR` indicando la Card que cierra.
-- Mover la Card de trello a `Review`.
-- Asignar a otro equipo de dos para que revise el `PR`.
-- Iterar hasta que no haya más comentarios:
-    + Si hay un comentario, el equipo original debe codear de nuevo la solución y volver a subir el código a github.
-    + Si no hay comentarios, se aprueba el `PR` y se mergea a master
-- Mergear el `PR` a master.
-- Volver al punto 1 hasta terminar el proyecto.
-
-## Horarios y Fechas
-
-El proyecto dura cuatro semanas. El lunes siguiente al terminar el sprint se realiza una demo donde se muestra al TL el progreso de esa semana. La última semana tiene el `demo final` donde se muestra el proyecto a todo el cohorte.
-
-El horario de trabajo sigue siendo de 9AM a 18PM.
-Todos los días a un horario a definir con su TL habrá un STAND UP para revisar las tareas del día, el progreso y si están bloqueados y/o necesitan ayuda.
-
-## Comenzando
-
-Vamos iniciar clonando el repo de Github que se les indicará llamado: `ec-{Cohorte}-{Grupo}`. Donde vamos a invitar a todos colaboradores del proyecto.
-
-Nosotros te vamos a dar un `boilerplate` con los modelos de Usuario y el flow de autenticación funcionando. Sobre este código vas a branchear para empezar a agregar tus propias features.
+La aplicación del e-commerce va a contar con los siguientes requerimientos:
 
 __IMPORTANTE:__ Es necesario contar minimamente con la última versión estable de Node y NPM. Asegurarse de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto.
-
-Actualmente las versiónes necesarias son:
-
- * __Node__: 12.18.3 o mayor
- * __NPM__: 6.14.16 o mayor
 
 Para verificar que versión tienen instalada:
 
@@ -61,31 +30,27 @@ Para verificar que versión tienen instalada:
 >
 > npm -v
 
-## BoilerPlate
+Para levantar el proyecto primero asegurarse de tener en /api un archivo .env con las siguientes variables de entorno:
 
-El boilerplate cuenta con dos carpetas: `api` y `client`. En estas carpetas estará el código del back-end y el front-end respectivamente.
+(Las variables que comienzan con DB están relacionadas a la base de datos, en este proyecto se usó postgeSQL.
+Las demas variables corresponden al puerto del servidor de back-end, las Cookies, y claves.
+Se debe crear una base de datos en postgres con el nombre "development" )
 
-En `api` vas a tener que crear un archivo llamado: `.env` que tenga la siguiente forma:
+DB_USER =
+DB_PASSWORD =
+DB_HOST = 
+port =
+COOKIE =
+apiKey =
+domain =
+hostF =
 
-```
-DB_USER=usuariodepostgres
-DB_PASSWORD=passwordDePostgres
-DB_HOST=localhost
-```
+Para levantar el proyecto correr los siguientes comandos tanto en \api como en \client: 
+- npm install 
+- npm start
 
-Tenés que reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado por github, ya que contiene información sensible (las credenciales).
-
-El contenido de `client` fue creado usando: Create React App.
-
-### Requerimientos
-
-La aplicación del e-commerce va a contar con los siguientes requerimientos:
-
-### Usuarios no Autenticados
-
-Un Visitante anónimo debería poder navegar tu e-commerce, ver y buscar productos.
-
-###### Como un Guest yo quiero...
+### Historia de usuario del proyecto
+##### Como un usuario invitado yo quiero...
 
 - PRODUCTOS:
     + ...ver la lista completa de productos (catálogo), para ver todo lo disponible para comprar.
@@ -108,10 +73,8 @@ Un Visitante anónimo debería poder navegar tu e-commerce, ver y buscar product
     + ...poder crear una cuenta, asi puede hacer otras cosas como dejar un review.
     + ...poder logearme usando Google o Github, para no tener que acordarme de un password nuevo.
 
-### Usuarios Autenticados
 
 Los usuarios que hayan creado su cuenta, podrán hacer todo lo que puede hacer un usuario guest y además:
-
 ###### Como un Usuario Autenticado yo quiero...
 
 - GESTION DE CUENTA:
@@ -128,7 +91,7 @@ Los usuarios que hayan creado su cuenta, podrán hacer todo lo que puede hacer u
 
 Los usuarios administradores pueden manejar el sitio, los productos que se listan y los items que están disponibles.
 
-###### Como un administrador yo quiero...
+#### Como un administrador yo quiero...
 
 - GESTION DE PRODUCTOS:
     + ...poder crear y editar productos, con nombre, descripción, precio y uno o más fotos, tal que los visitantes puedan ver la última información de lo que se vende.
@@ -187,38 +150,33 @@ Este proyecto tiene muchas tareas para realizar, asi que es fácil sentirse abru
     + Los admins pueden ver las ordenes pendientes.
     + Los usuarios reciben mails de notificaciones.
 
-    #### Modulos a instalar para que funcione
+    #### Modulos Utilizados
 
 ## En ./client
-- ( npm install  react redux react-redux redux-devtools react-router-dom redux-thunk axios)
 
-- npm install redux
-- npm install react
-- npm install react-redux
-- npm install redux-devtools
-- npm install react-router-dom
-- npm install redux-thunk
+- redux
+- react
+- react-redux
+- redux-devtools
+- react-router-dom
+- redux-thunk
 - npm axios
-- npm install bootstrap4-toggle
-- npm install node-sass --save
-- npm install react-confetti  
+- bootstrap4-toggle
+- node-sass --save
+- react-confetti  
 
-## En ./api
-- ( npm i sequelize cors multer bcrypt express-session express-session-sequelize passport passport-local passport-google-oauth passport-github2)
+## En ./api 
+
 - npm install
-- npm install sequelize
-- npm install cors
-- npm install multer
-- npm install bcrypt
-- npm install express-session
-- npm install express-session-sequelize
-- npm install passport
-- npm install passport-local
-- npm install passport-google-oauth
-- npm install passport-github2
-- npm install mailgun-js
-- npm install crypto-random-string
-
-git remote add origin https://github.com/cristianluca19/Henry-Mov.git
-git branch -M main
-git push -u origin main
+- sequelize
+- cors
+- multer
+- bcrypt
+- express-session
+- express-session-sequelize
+- passport
+- passport-local
+- passport-google-oauth
+- passport-github2
+- mailgun-js
+- crypto-random-string
